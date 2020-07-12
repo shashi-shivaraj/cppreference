@@ -99,6 +99,12 @@ int main()
 	Entity* e = new Entity;
 	PrintEntityConst(*e);
 	PrintEntity(*e);
+
+	delete temp;
+	delete temp2;
+	delete temp3;
+	delete temp4;
+	delete e;
 	
 	return 0;
 }

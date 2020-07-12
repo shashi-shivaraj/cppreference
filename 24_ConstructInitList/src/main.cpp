@@ -61,5 +61,8 @@ int main()
 	Entity* F = new Entity("Hazard");
 	std::cout <<" F name = "<< F->GetName() << " score = "<< F->GetScore() << std::endl;
 
+	delete E;
+	delete F;
+	
 	return 0;
 }

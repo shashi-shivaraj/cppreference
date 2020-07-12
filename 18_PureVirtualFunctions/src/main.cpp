@@ -61,6 +61,10 @@ int main()
 	PrintClassName(pPerson);
 	PrintClassName(pEntity);
 	PrintClassName(aclass);
+
+	delete pPerson;
+	delete pEntity;
+	delete aclass;
 	
 	return 0;
 }

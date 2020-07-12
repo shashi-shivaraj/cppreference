@@ -43,5 +43,9 @@ int main()
 
 	Player* p = new Player("Player");
 	PrintName(p);  //will print Player ; will print entity if GetName() is not virtual.
+	
+	delete e;
+	delete p;
+	
 	return 0;
 }

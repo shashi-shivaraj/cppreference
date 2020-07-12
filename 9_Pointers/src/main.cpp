@@ -48,7 +48,7 @@ int main(int argc , char* argv[])
 
 	   std::cout<<"mofified first char using **dptr = "<<buffer<<std::endl;
 
-	 delete[] buffer;
+	   delete[] buffer; //clean up heap memory
 
 	return 0;
 }

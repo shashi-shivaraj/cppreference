@@ -48,5 +48,8 @@ int main()
 	Player* eP = new Player();
 	eP->PrintPlayer(); // protected variable z is shared between base and subclass
 
+	delete e;
+	delete eP;
+	
 	return 0;
 }
