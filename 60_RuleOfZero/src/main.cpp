@@ -1,10 +1,12 @@
 #include <iostream>
 
-/*Classes that have custom destructors, copy/move constructors or copy/move assignment operators
+/*Rule of Zero : Classes that have custom destructors, copy/move constructors or copy/move assignment operators
  should deal exclusively with ownership.
  Other classes should not have custom destructors, copy/move constructors or copy/move assignment operators.*/
 
 //Classes without pointers/memory operations should use compiler defaults.
+
+//If the calss doesnot contain any data pointer apply rule of zero;
 
 class Entity
 {
