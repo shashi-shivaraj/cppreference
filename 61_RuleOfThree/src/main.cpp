@@ -13,7 +13,7 @@ class String
 {
 	public:
 	
-	String(const char* str):data(new char[std::strlen(str)]),data_len(std::strlen(str)) 
+	String(const char* str):data(new char[std::strlen(str)+1]),data_len(std::strlen(str)+1) 
 	{
 		std::cout<<"User defined constructor called"<<std::endl;
 		std::strncpy(data,str,data_len);
@@ -54,6 +54,11 @@ class String
 		return *this;
 	}
 
+	const char* getData()
+	{
+		return data;
+	}
+
 	private:
 		char* data;
 		int data_len;
@@ -62,11 +67,14 @@ class String
 int main()
 {
 	String str("Eden Hazrad"); //user defined constructor called
+	std::cout<<str.getData()<<std::endl;
 
 	String copyStr(str); //copy constructor called
+	std::cout<<copyStr.getData()<<std::endl;
 
 	String copyAssignStr("default");
 	copyAssignStr = str;	//copy assignment is called
+	std::cout<<copyAssignStr.getData()<<std::endl;
 
 	return 0;
 }
