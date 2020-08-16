@@ -9,7 +9,11 @@ int main(int argc , char* argv[])
 	}
 
 	int value = std::atoi(argv[1]);
-	std::cout << "value = " << value <<std::endl;  
+	std::cout << "value = " << value <<std::endl;
+
+	std::cout << "cout << value++ : assign then increment  = " << value++ <<std::endl;
+	value = std::atoi(argv[1]);
+	std::cout << "cout << ++value : increment then assign  = " << ++value <<std::endl;
 	
 	int ouput = value++ ;
 	std::cout << "ouput = value++ : assign then increment : output = " << ouput <<std::endl;
