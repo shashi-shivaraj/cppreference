@@ -19,6 +19,16 @@ class Array
 		T m_Array[N];
 };
 
+template<typename T>   // primary template
+struct is_void : std::false_type
+{
+};
+
+template<>  // explicit specialization for T = void
+struct is_void<void> : std::true_type
+{
+};
+
 int main()
 {
 	Print("Hazard");
@@ -29,6 +39,13 @@ int main()
 
 	Array<std::string, 22> array;
 	std::cout<<array.GetSize()<<std::endl;
+
+	// for any type T other than void, the 
+    // class is derived from false_type
+    std::cout << is_void<char>::value << '\n'; 
+    // but when T is void, the class is derived
+    // from true_type
+    std::cout << is_void<void>::value << '\n';
 
 	return 0;
 }
