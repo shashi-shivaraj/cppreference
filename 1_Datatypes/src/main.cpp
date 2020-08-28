@@ -22,6 +22,7 @@ int main()
 	std::cout << "Range of unsigned short is 0 to "<<USHRT_MAX<<std::endl;
 	std::cout<<std::endl;
 
+	//refer <cstdint> to specify the size of int like uint8_t , int64_t for better portability.
 	std::cout << "size of int in bytes = "<<sizeof(int)<<std::endl;
 	std::cout << "Range of int is  "<<INT_MIN << " to "<<INT_MAX<<std::endl;
 	std::cout<<std::endl;
