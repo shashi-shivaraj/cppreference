@@ -5,15 +5,17 @@ CXXFLAGS=-g -std=c++14 -W -Wall -Weffc++ -Wextra -pedantic -O0
 
 OBJS = \
 	./src/main.o
+
 EXEC = run
 
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+# https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html
+# $@ - targets ;  $^ - dependencies of target
+
+%.o: %.cpp # pattern for target (object file) : dependencies (source code)
+	$(CXX) $(CXXFLAGS) -c $^ -o $@
 
 $(EXEC): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $@ $(OBJS) $(LDFLAGS)
-
-main.o: main.cpp
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
 
 clean:
 	rm -rf $(OBJS)
